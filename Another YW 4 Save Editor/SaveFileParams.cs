@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Linq;
 
 namespace Another_YW_4_Save_Editor
 {
@@ -303,6 +304,24 @@ namespace Another_YW_4_Save_Editor
 
                 pontualOffset = pontualOffset + 469;
             }
+
+            pontualOffset = 944897;
+
+            foreach (YoKai yokai in UserYoKaiList)
+            {
+                if(yokai.ID2 > 0)
+                {
+                    setByteValue.InjectByteFromInt(str, yokai.ID1, pontualOffset, 2);
+                    setByteValue.InjectByteFromInt(str, yokai.ID2, pontualOffset + 2, 2);
+
+                    pontualOffset = pontualOffset + 4;
+                }
+            }
+
+            int test = UserYoKaiList.Where(yokai => yokai.ID2 > 0).Count();
+
+            setByteValue.InjectByteFromInt(str, UserYoKaiList.Where(yokai => yokai.ID2 > 0).Count(), 946497, 4);
+
             return str;
         }
     }

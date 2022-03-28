@@ -1306,5 +1306,10 @@ namespace Another_YW_4_Save_Editor
                 yokaiExSkl4Nbox.SelectedIndex = new GetSkill().pickYokaiSkill(skills[5]);
             }
         }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
