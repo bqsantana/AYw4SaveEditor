@@ -3938,27 +3938,27 @@
             // 
             // gatchaMax
             // 
-            this.gatchaMax.Location = new System.Drawing.Point(146, 56);
+            this.gatchaMax.Location = new System.Drawing.Point(172, 56);
             this.gatchaMax.Maximum = new decimal(new int[] {
             99,
             0,
             0,
             0});
             this.gatchaMax.Name = "gatchaMax";
-            this.gatchaMax.Size = new System.Drawing.Size(120, 23);
+            this.gatchaMax.Size = new System.Drawing.Size(94, 23);
             this.gatchaMax.TabIndex = 2;
             this.gatchaMax.ValueChanged += new System.EventHandler(this.gatchaMax_ValueChanged);
             // 
             // gatchaDaily
             // 
-            this.gatchaDaily.Location = new System.Drawing.Point(136, 27);
+            this.gatchaDaily.Location = new System.Drawing.Point(162, 27);
             this.gatchaDaily.Maximum = new decimal(new int[] {
             99,
             0,
             0,
             0});
             this.gatchaDaily.Name = "gatchaDaily";
-            this.gatchaDaily.Size = new System.Drawing.Size(130, 23);
+            this.gatchaDaily.Size = new System.Drawing.Size(104, 23);
             this.gatchaDaily.TabIndex = 2;
             this.gatchaDaily.ValueChanged += new System.EventHandler(this.gatchaDaily_ValueChanged);
             // 
@@ -3967,18 +3967,18 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(20, 58);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 15);
+            this.label3.Size = new System.Drawing.Size(146, 15);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Maximum Daily Tries:";
+            this.label3.Text = "Maximum Daily Attempts:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(20, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 15);
+            this.label2.Size = new System.Drawing.Size(136, 15);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Avaiable Daily Tries:";
+            this.label2.Text = "Avaiable Daily Attempts:";
             // 
             // groupBox2
             // 
