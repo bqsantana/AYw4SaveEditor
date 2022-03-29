@@ -1,7 +1,4 @@
-﻿using System.Text;
-using System.Linq;
-
-namespace Another_YW_4_Save_Editor
+﻿namespace Another_YW_4_Save_Editor
 {
     internal class SaveFileParams
     {
@@ -309,7 +306,7 @@ namespace Another_YW_4_Save_Editor
 
             foreach (YoKai yokai in UserYoKaiList)
             {
-                if(yokai.ID2 > 0)
+                if (yokai.ID2 > 0)
                 {
                     setByteValue.InjectByteFromInt(str, yokai.ID1, pontualOffset, 2);
                     setByteValue.InjectByteFromInt(str, yokai.ID2, pontualOffset + 2, 2);

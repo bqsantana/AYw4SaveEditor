@@ -48,7 +48,8 @@ namespace Another_YW_4_Save_Editor
         {
             byte[] byteString = new byte[count];
             byteString = Encoding.UTF8.GetBytes(value);
-            while(byteString.Length < count) {
+            while (byteString.Length < count)
+            {
                 byte[] newByte = new byte[byteString.Length + (count - byteString.Length)];
                 byteString.CopyTo(newByte, 0);
                 byteString = newByte;

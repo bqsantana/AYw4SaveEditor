@@ -1100,13 +1100,15 @@ namespace Another_YW_4_Save_Editor
                                 idExist = true;
                             }
                         }
-                        if (!idExist) {
+                        if (!idExist)
+                        {
                             saveFileParams.UserYoKaiList[item.Index].ID2 = i;
                             saveFileParams.UserYoKaiList[item.Index].YoKai_Order = i;
                             item.Selected = false;
                             item.Selected = true;
-                            return; 
+                            return;
                         }
+                        idExist = false;
                     }
                 }
             }
@@ -1290,7 +1292,18 @@ namespace Another_YW_4_Save_Editor
 
         private void yokaiTbox_TextChanged(object sender, EventArgs e)
         {
-
+            foreach(ListViewItem item in yokaiListView.SelectedItems)
+            {
+                if (Encoding.UTF8.GetBytes(yokaiTbox.Text).Count() < 24)
+                {
+                    saveFileParams.UserYoKaiList[item.Index].YoKai_Name = yokaiTbox.Text;
+                }
+                else
+                {
+                    yokaiTbox.Text = saveFileParams.UserYoKaiList[item.Index].YoKai_Name;
+                }
+            }
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
