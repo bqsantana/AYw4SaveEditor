@@ -11,6 +11,7 @@
         public List<YoKai> SellingYoKaiList { get; set; } = new List<YoKai> { };
         public List<MainCharacter> MainCharacterList { get; set; } = new List<MainCharacter>();
         public int TotalItemQuantity1 { get; set; }
+        public List<int> characterID2List { get; set; }
 
 
         public void mapParams(Stream str)
@@ -140,12 +141,12 @@
                     Character_PG = getByteValue.ExtractByteToInt(str, pontualOffset + 168, 4),
                     Character_Level = getByteValue.ExtractByteToInt(str, pontualOffset + 180, 4),
                     Character_Flag1 = getByteValue.ExtractByteToInt(str, pontualOffset + 204, 2),
-                    Character_HPplus = getByteValue.ExtractByteToInt(str, pontualOffset + 215, 2),
-                    Character_YPplus = getByteValue.ExtractByteToInt(str, pontualOffset + 217, 2),
-                    Character_STplus = getByteValue.ExtractByteToInt(str, pontualOffset + 219, 2),
-                    Character_SPplus = getByteValue.ExtractByteToInt(str, pontualOffset + 221, 2),
-                    Character_PAplus = getByteValue.ExtractByteToInt(str, pontualOffset + 223, 2),
-                    Character_SAplus = getByteValue.ExtractByteToInt(str, pontualOffset + 225, 2),
+                    Character_HPplus = getByteValue.ExtractByteToInt(str, pontualOffset + 214, 2),
+                    Character_YPplus = getByteValue.ExtractByteToInt(str, pontualOffset + 216, 2),
+                    Character_STplus = getByteValue.ExtractByteToInt(str, pontualOffset + 218, 2),
+                    Character_SPplus = getByteValue.ExtractByteToInt(str, pontualOffset + 220, 2),
+                    Character_PAplus = getByteValue.ExtractByteToInt(str, pontualOffset + 222, 2),
+                    Character_SAplus = getByteValue.ExtractByteToInt(str, pontualOffset + 224, 2),
                     Character_Unknown1 = getByteValue.ExtractByteToInt(str, pontualOffset + 254, 1),
                     Character_Unknown2 = getByteValue.ExtractByteToInt(str, pontualOffset + 255, 1),
                     Character_Unknown3 = getByteValue.ExtractByteToInt(str, pontualOffset + 256, 1),
@@ -154,7 +155,7 @@
                     Character_Unknown6 = getByteValue.ExtractByteToInt(str, pontualOffset + 259, 1),
                     Character_Unknown7 = getByteValue.ExtractByteToInt(str, pontualOffset + 268, 4),
                     Character_Unknown8 = getByteValue.ExtractByteToInt(str, pontualOffset + 292, 4),
-                    Character_Unknown9 = getByteValue.ExtractByteToInt(str, pontualOffset + 318, 2),
+                    Character_Unknown9 = getByteValue.ExtractByteToInt(str, pontualOffset + 317, 2),
                     Character_Unknown10 = getByteValue.ExtractByteToInt(str, pontualOffset + 330, 2),
                     Character_Order = getByteValue.ExtractByteToInt(str, pontualOffset + 344, 4),
                     Character_Unknown11 = getByteValue.ExtractByteToInt(str, pontualOffset + 356, 4),
@@ -219,12 +220,34 @@
                 });
                 pontualOffset = pontualOffset + 469;
             }
+
+            characterID2List = new List<int>();
+
+            foreach (MainCharacter character in MainCharacterList)
+            {
+                if (character.ID2 > 0)
+                {
+                    characterID2List.Add(character.ID2);
+                }
+            }
+
+            foreach (YoKai yokai in UserYoKaiList)
+            {
+                if (yokai.ID2 > 0)
+                {
+                    characterID2List.Add(yokai.ID2);
+                }
+            }
+
+            characterID2List.Sort();
         }
 
         public MemoryStream injectParams(MemoryStream str)
         {
             SetByteValue setByteValue = new SetByteValue();
             int pontualOffset = 0;
+
+
 
             //MISC --------------------------------------------------------------------------------/////////////////////////////////
 
@@ -235,24 +258,34 @@
 
             setByteValue.InjectByteFromInt(str, misc.Money, 203, 4);
 
-            //while (Encoding.UTF8.GetBytes(misc.NateName).Count() < 24) { misc.NateName = misc.NateName + " "; }
-            //while (Encoding.UTF8.GetBytes(misc.KatieName).Count() < 24) { misc.KatieName = misc.KatieName + " "; }
-            //while (Encoding.UTF8.GetBytes(misc.SummerName).Count() < 24) { misc.SummerName = misc.SummerName + " "; }
-            //while (Encoding.UTF8.GetBytes(misc.ToumaName).Count() < 24) { misc.ToumaName = misc.ToumaName + " "; }
-            //while (Encoding.UTF8.GetBytes(misc.AkinoriName).Count() < 24) { misc.AkinoriName = misc.AkinoriName + " "; }
-            //while (Encoding.UTF8.GetBytes(misc.JackName).Count() < 24) { misc.JackName = misc.JackName + " "; }
-
-            setByteValue.InjectByteFromString(str, misc.NateName, 282, 24);
-            setByteValue.InjectByteFromString(str, misc.KatieName, 318, 24);
-            setByteValue.InjectByteFromString(str, misc.SummerName, 354, 24);
-            setByteValue.InjectByteFromString(str, misc.ToumaName, 390, 24);
-            setByteValue.InjectByteFromString(str, misc.AkinoriName, 426, 24);
-            setByteValue.InjectByteFromString(str, misc.JackName, 462, 24);
+            setByteValue.InjectByteFromString(str, misc.NateName ?? "", 282, 24);
+            setByteValue.InjectByteFromString(str, misc.KatieName ?? "", 318, 24);
+            setByteValue.InjectByteFromString(str, misc.SummerName ?? "", 354, 24);
+            setByteValue.InjectByteFromString(str, misc.ToumaName ?? "", 390, 24);
+            setByteValue.InjectByteFromString(str, misc.AkinoriName ?? "", 426, 24);
+            setByteValue.InjectByteFromString(str, misc.JackName ?? "", 462, 24);
 
             setByteValue.InjectByteFromInt(str, misc.Gatcha.gatchaTries, 2082, 1);
             setByteValue.InjectByteFromInt(str, misc.Gatcha.gatchaMaxTries, 2083, 1);
 
-            //USER YOKAI ---------------------------------------------------------------------------------------////////////////////////////
+            // CONSUMABLE/FOOD ITEMS ---------------------------------------------------------/////////////////////////////////////
+
+            pontualOffset = 76579;
+
+            foreach (Consumable food in ConsumableList)
+            {
+                setByteValue.InjectByteFromInt(str, food.ID1, pontualOffset, 2);
+                setByteValue.InjectByteFromInt(str, food.ID2, pontualOffset + 2, 2);
+                setByteValue.InjectByteFromByteString(str, food.ItemSignature ?? "00-00-00-00", pontualOffset + 12);
+                setByteValue.InjectByteFromInt(str, food.Order, pontualOffset + 24, 4);
+                setByteValue.InjectByteFromInt(str, food.Quantity, pontualOffset + 36, 2);
+                pontualOffset = pontualOffset + 54;
+            }
+
+            setByteValue.InjectByteFromInt(str, ConsumableList.Where(food => food.ID2 > 0).Count(), 166587, 2);
+
+
+            // USER YOKAI ---------------------------------------------------------------------------------------////////////////////////////
 
             pontualOffset = 169449;
 
@@ -264,7 +297,7 @@
                 setByteValue.InjectByteFromByteString(str, yokai.YoKai_Signature, pontualOffset + 72);
                 setByteValue.InjectByteFromByteString(str, yokai.YoKai_Skill1, pontualOffset + 84);
                 setByteValue.InjectByteFromByteString(str, yokai.YoKai_Skill2, pontualOffset + 88);
-                setByteValue.InjectByteFromByteString(str, yokai.YoKai_Skill3, pontualOffset + 94);
+                setByteValue.InjectByteFromByteString(str, yokai.YoKai_Skill3, pontualOffset + 92);
                 setByteValue.InjectByteFromByteString(str, yokai.YoKai_Skill4, pontualOffset + 96);
                 setByteValue.InjectByteFromByteString(str, yokai.YoKai_Skill5, pontualOffset + 100);
                 setByteValue.InjectByteFromByteString(str, yokai.YoKai_Skill6, pontualOffset + 104);
@@ -306,18 +339,75 @@
 
             foreach (YoKai yokai in UserYoKaiList)
             {
-                if (yokai.ID2 > 0)
-                {
-                    setByteValue.InjectByteFromInt(str, yokai.ID1, pontualOffset, 2);
-                    setByteValue.InjectByteFromInt(str, yokai.ID2, pontualOffset + 2, 2);
+                setByteValue.InjectByteFromInt(str, yokai.ID1, pontualOffset, 2);
+                setByteValue.InjectByteFromInt(str, yokai.ID2, pontualOffset + 2, 2);
 
-                    pontualOffset = pontualOffset + 4;
-                }
+                pontualOffset = pontualOffset + 4;
             }
 
-            int test = UserYoKaiList.Where(yokai => yokai.ID2 > 0).Count();
-
             setByteValue.InjectByteFromInt(str, UserYoKaiList.Where(yokai => yokai.ID2 > 0).Count(), 946497, 4);
+
+            // MAIN CHARACTER ---------------------------------------------------------------------------------////////////////////////////
+
+            pontualOffset = 166627;
+
+            foreach (MainCharacter character in MainCharacterList)
+            {
+                setByteValue.InjectByteFromInt(str, character.ID1, pontualOffset, 2);
+                setByteValue.InjectByteFromInt(str, character.ID2, pontualOffset + 2, 2);
+                setByteValue.InjectByteFromString(str, character.Character_Name, pontualOffset + 28, 24);
+                setByteValue.InjectByteFromByteString(str, character.Character_Signature, pontualOffset + 72);
+                setByteValue.InjectByteFromByteString(str, character.Character_Skill1, pontualOffset + 84);
+                setByteValue.InjectByteFromByteString(str, character.Character_Skill2, pontualOffset + 88);
+                setByteValue.InjectByteFromByteString(str, character.Character_Skill3, pontualOffset + 92);
+                setByteValue.InjectByteFromByteString(str, character.Character_Skill4, pontualOffset + 96);
+                setByteValue.InjectByteFromByteString(str, character.Character_Skill5, pontualOffset + 100);
+                setByteValue.InjectByteFromByteString(str, character.Character_Skill6, pontualOffset + 104);
+                setByteValue.InjectByteFromInt(str, character.Character_XP, pontualOffset + 132, 4);
+                setByteValue.InjectByteFromInt(str, character.Character_HP, pontualOffset + 144, 4);
+                setByteValue.InjectByteFromInt(str, character.Character_YP, pontualOffset + 156, 4);
+                setByteValue.InjectByteFromInt(str, character.Character_PG, pontualOffset + 168, 4);
+                setByteValue.InjectByteFromInt(str, character.Character_Level, pontualOffset + 180, 4);
+                setByteValue.InjectByteFromInt(str, character.Character_Flag1, pontualOffset + 204, 2);
+                setByteValue.InjectByteFromInt(str, character.Character_HPplus, pontualOffset + 214, 2);
+                setByteValue.InjectByteFromInt(str, character.Character_YPplus, pontualOffset + 216, 2);
+                setByteValue.InjectByteFromInt(str, character.Character_STplus, pontualOffset + 218, 2);
+                setByteValue.InjectByteFromInt(str, character.Character_SPplus, pontualOffset + 220, 2);
+                setByteValue.InjectByteFromInt(str, character.Character_PAplus, pontualOffset + 222, 2);
+                setByteValue.InjectByteFromInt(str, character.Character_SAplus, pontualOffset + 224, 2);
+                setByteValue.InjectByteFromInt(str, character.Character_Unknown1, pontualOffset + 254, 1);
+                setByteValue.InjectByteFromInt(str, character.Character_Unknown2, pontualOffset + 255, 1);
+                setByteValue.InjectByteFromInt(str, character.Character_Unknown3, pontualOffset + 256, 1);
+                setByteValue.InjectByteFromInt(str, character.Character_Unknown4, pontualOffset + 257, 1);
+                setByteValue.InjectByteFromInt(str, character.Character_Unknown5, pontualOffset + 258, 1);
+                setByteValue.InjectByteFromInt(str, character.Character_Unknown6, pontualOffset + 259, 1);
+                setByteValue.InjectByteFromInt(str, character.Character_Unknown7, pontualOffset + 268, 1);
+                setByteValue.InjectByteFromInt(str, character.Character_Unknown8, pontualOffset + 292, 1);
+                setByteValue.InjectByteFromInt(str, character.Character_Unknown9, pontualOffset + 317, 1);
+                setByteValue.InjectByteFromInt(str, character.Character_Unknown10, pontualOffset + 330, 1);
+                setByteValue.InjectByteFromInt(str, character.Character_Order, pontualOffset + 330, 1);
+                setByteValue.InjectByteFromInt(str, character.Character_Unknown11, pontualOffset + 356, 1);
+                setByteValue.InjectByteFromInt(str, character.Character_Unknown12, pontualOffset + 380, 1);
+                setByteValue.InjectByteFromInt(str, character.Character_Unknown13, pontualOffset + 389, 1);
+                setByteValue.InjectByteFromInt(str, character.Character_Unknown14, pontualOffset + 398, 1);
+                setByteValue.InjectByteFromInt(str, character.Character_Unknown15, pontualOffset + 416, 1);
+                setByteValue.InjectByteFromInt(str, character.Character_Unknown16, pontualOffset + 425, 1);
+                setByteValue.InjectByteFromInt(str, character.Character_Unknown17, pontualOffset + 452, 1);
+
+                pontualOffset = pontualOffset + 469;
+            }
+
+            pontualOffset = 946517;
+
+            foreach (MainCharacter character in MainCharacterList)
+            {
+                setByteValue.InjectByteFromInt(str, character.ID1, pontualOffset, 2);
+                setByteValue.InjectByteFromInt(str, character.ID2, pontualOffset + 2, 2);
+
+                pontualOffset = pontualOffset + 4;
+            }
+
+            setByteValue.InjectByteFromInt(str, MainCharacterList.Where(character => character.ID2 > 0).Count(), 946537, 4);
 
             return str;
         }
