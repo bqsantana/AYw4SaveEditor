@@ -12632,7 +12632,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Another YW4 Save Editor 0.2";
+            this.Text = "Another YW4 Save Editor 0.2.1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
