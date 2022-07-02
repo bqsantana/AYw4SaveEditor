@@ -397,7 +397,7 @@
                 pontualOffset = pontualOffset + 469;
             }
 
-            pontualOffset = 946517;
+            pontualOffset = 946513;
 
             foreach (MainCharacter character in MainCharacterList)
             {

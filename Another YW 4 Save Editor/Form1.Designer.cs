@@ -12227,7 +12227,6 @@
             // 
             // yokaiUnknown4Nbox
             // 
-            this.yokaiUnknown4Nbox.Enabled = false;
             this.yokaiUnknown4Nbox.Location = new System.Drawing.Point(78, 108);
             this.yokaiUnknown4Nbox.Maximum = new decimal(new int[] {
             256,
@@ -12235,13 +12234,11 @@
             0,
             0});
             this.yokaiUnknown4Nbox.Name = "yokaiUnknown4Nbox";
-            this.yokaiUnknown4Nbox.ReadOnly = true;
             this.yokaiUnknown4Nbox.Size = new System.Drawing.Size(103, 23);
             this.yokaiUnknown4Nbox.TabIndex = 1;
             // 
             // yokaiUnknown9Nbox
             // 
-            this.yokaiUnknown9Nbox.Enabled = false;
             this.yokaiUnknown9Nbox.Location = new System.Drawing.Point(78, 253);
             this.yokaiUnknown9Nbox.Maximum = new decimal(new int[] {
             65535,
@@ -12249,7 +12246,6 @@
             0,
             0});
             this.yokaiUnknown9Nbox.Name = "yokaiUnknown9Nbox";
-            this.yokaiUnknown9Nbox.ReadOnly = true;
             this.yokaiUnknown9Nbox.Size = new System.Drawing.Size(103, 23);
             this.yokaiUnknown9Nbox.TabIndex = 1;
             // 
@@ -12273,7 +12269,6 @@
             // 
             // yokaiUnknown1Nbox
             // 
-            this.yokaiUnknown1Nbox.Enabled = false;
             this.yokaiUnknown1Nbox.Location = new System.Drawing.Point(78, 21);
             this.yokaiUnknown1Nbox.Maximum = new decimal(new int[] {
             256,
@@ -12281,13 +12276,11 @@
             0,
             0});
             this.yokaiUnknown1Nbox.Name = "yokaiUnknown1Nbox";
-            this.yokaiUnknown1Nbox.ReadOnly = true;
             this.yokaiUnknown1Nbox.Size = new System.Drawing.Size(103, 23);
             this.yokaiUnknown1Nbox.TabIndex = 1;
             // 
             // yokaiUnknown8Nbox
             // 
-            this.yokaiUnknown8Nbox.Enabled = false;
             this.yokaiUnknown8Nbox.Location = new System.Drawing.Point(78, 224);
             this.yokaiUnknown8Nbox.Maximum = new decimal(new int[] {
             -1,
@@ -12300,7 +12293,6 @@
             0,
             -2147483648});
             this.yokaiUnknown8Nbox.Name = "yokaiUnknown8Nbox";
-            this.yokaiUnknown8Nbox.ReadOnly = true;
             this.yokaiUnknown8Nbox.Size = new System.Drawing.Size(103, 23);
             this.yokaiUnknown8Nbox.TabIndex = 1;
             // 
@@ -12324,7 +12316,6 @@
             // 
             // yokaiUnknown10Nbox
             // 
-            this.yokaiUnknown10Nbox.Enabled = false;
             this.yokaiUnknown10Nbox.Location = new System.Drawing.Point(261, 21);
             this.yokaiUnknown10Nbox.Maximum = new decimal(new int[] {
             65535,
@@ -12332,13 +12323,11 @@
             0,
             0});
             this.yokaiUnknown10Nbox.Name = "yokaiUnknown10Nbox";
-            this.yokaiUnknown10Nbox.ReadOnly = true;
             this.yokaiUnknown10Nbox.Size = new System.Drawing.Size(103, 23);
             this.yokaiUnknown10Nbox.TabIndex = 1;
             // 
             // yokaiUnknown7Nbox
             // 
-            this.yokaiUnknown7Nbox.Enabled = false;
             this.yokaiUnknown7Nbox.Location = new System.Drawing.Point(78, 195);
             this.yokaiUnknown7Nbox.Maximum = new decimal(new int[] {
             -1,
@@ -12351,7 +12340,6 @@
             0,
             -2147483648});
             this.yokaiUnknown7Nbox.Name = "yokaiUnknown7Nbox";
-            this.yokaiUnknown7Nbox.ReadOnly = true;
             this.yokaiUnknown7Nbox.Size = new System.Drawing.Size(103, 23);
             this.yokaiUnknown7Nbox.TabIndex = 1;
             // 
@@ -12375,7 +12363,6 @@
             // 
             // yokaiUnknown11Nbox
             // 
-            this.yokaiUnknown11Nbox.Enabled = false;
             this.yokaiUnknown11Nbox.Location = new System.Drawing.Point(261, 50);
             this.yokaiUnknown11Nbox.Maximum = new decimal(new int[] {
             -1,
@@ -12388,13 +12375,11 @@
             0,
             -2147483648});
             this.yokaiUnknown11Nbox.Name = "yokaiUnknown11Nbox";
-            this.yokaiUnknown11Nbox.ReadOnly = true;
             this.yokaiUnknown11Nbox.Size = new System.Drawing.Size(103, 23);
             this.yokaiUnknown11Nbox.TabIndex = 1;
             // 
             // yokaiUnknown6Nbox
             // 
-            this.yokaiUnknown6Nbox.Enabled = false;
             this.yokaiUnknown6Nbox.Location = new System.Drawing.Point(78, 166);
             this.yokaiUnknown6Nbox.Maximum = new decimal(new int[] {
             256,
@@ -12402,7 +12387,6 @@
             0,
             0});
             this.yokaiUnknown6Nbox.Name = "yokaiUnknown6Nbox";
-            this.yokaiUnknown6Nbox.ReadOnly = true;
             this.yokaiUnknown6Nbox.Size = new System.Drawing.Size(103, 23);
             this.yokaiUnknown6Nbox.TabIndex = 1;
             // 
@@ -12426,7 +12410,6 @@
             // 
             // yokaiUnknown12Nbox
             // 
-            this.yokaiUnknown12Nbox.Enabled = false;
             this.yokaiUnknown12Nbox.Location = new System.Drawing.Point(261, 79);
             this.yokaiUnknown12Nbox.Maximum = new decimal(new int[] {
             256,
@@ -12434,13 +12417,11 @@
             0,
             0});
             this.yokaiUnknown12Nbox.Name = "yokaiUnknown12Nbox";
-            this.yokaiUnknown12Nbox.ReadOnly = true;
             this.yokaiUnknown12Nbox.Size = new System.Drawing.Size(103, 23);
             this.yokaiUnknown12Nbox.TabIndex = 1;
             // 
             // yokaiUnknown5Nbox
             // 
-            this.yokaiUnknown5Nbox.Enabled = false;
             this.yokaiUnknown5Nbox.Location = new System.Drawing.Point(78, 137);
             this.yokaiUnknown5Nbox.Maximum = new decimal(new int[] {
             256,
@@ -12448,7 +12429,6 @@
             0,
             0});
             this.yokaiUnknown5Nbox.Name = "yokaiUnknown5Nbox";
-            this.yokaiUnknown5Nbox.ReadOnly = true;
             this.yokaiUnknown5Nbox.Size = new System.Drawing.Size(103, 23);
             this.yokaiUnknown5Nbox.TabIndex = 1;
             // 
@@ -12472,7 +12452,6 @@
             // 
             // yokaiUnknown13Nbox
             // 
-            this.yokaiUnknown13Nbox.Enabled = false;
             this.yokaiUnknown13Nbox.Location = new System.Drawing.Point(261, 108);
             this.yokaiUnknown13Nbox.Maximum = new decimal(new int[] {
             256,
@@ -12480,7 +12459,6 @@
             0,
             0});
             this.yokaiUnknown13Nbox.Name = "yokaiUnknown13Nbox";
-            this.yokaiUnknown13Nbox.ReadOnly = true;
             this.yokaiUnknown13Nbox.Size = new System.Drawing.Size(103, 23);
             this.yokaiUnknown13Nbox.TabIndex = 1;
             // 
@@ -12504,7 +12482,6 @@
             // 
             // yokaiUnknown14Nbox
             // 
-            this.yokaiUnknown14Nbox.Enabled = false;
             this.yokaiUnknown14Nbox.Location = new System.Drawing.Point(261, 137);
             this.yokaiUnknown14Nbox.Maximum = new decimal(new int[] {
             256,
@@ -12512,13 +12489,11 @@
             0,
             0});
             this.yokaiUnknown14Nbox.Name = "yokaiUnknown14Nbox";
-            this.yokaiUnknown14Nbox.ReadOnly = true;
             this.yokaiUnknown14Nbox.Size = new System.Drawing.Size(103, 23);
             this.yokaiUnknown14Nbox.TabIndex = 1;
             // 
             // yokaiUnknown3Nbox
             // 
-            this.yokaiUnknown3Nbox.Enabled = false;
             this.yokaiUnknown3Nbox.Location = new System.Drawing.Point(78, 79);
             this.yokaiUnknown3Nbox.Maximum = new decimal(new int[] {
             256,
@@ -12526,7 +12501,6 @@
             0,
             0});
             this.yokaiUnknown3Nbox.Name = "yokaiUnknown3Nbox";
-            this.yokaiUnknown3Nbox.ReadOnly = true;
             this.yokaiUnknown3Nbox.Size = new System.Drawing.Size(103, 23);
             this.yokaiUnknown3Nbox.TabIndex = 1;
             // 
@@ -12550,7 +12524,6 @@
             // 
             // yokaiUnknown15Nbox
             // 
-            this.yokaiUnknown15Nbox.Enabled = false;
             this.yokaiUnknown15Nbox.Location = new System.Drawing.Point(261, 166);
             this.yokaiUnknown15Nbox.Maximum = new decimal(new int[] {
             256,
@@ -12558,13 +12531,11 @@
             0,
             0});
             this.yokaiUnknown15Nbox.Name = "yokaiUnknown15Nbox";
-            this.yokaiUnknown15Nbox.ReadOnly = true;
             this.yokaiUnknown15Nbox.Size = new System.Drawing.Size(103, 23);
             this.yokaiUnknown15Nbox.TabIndex = 1;
             // 
             // yokaiUnknown2Nbox
             // 
-            this.yokaiUnknown2Nbox.Enabled = false;
             this.yokaiUnknown2Nbox.Location = new System.Drawing.Point(78, 50);
             this.yokaiUnknown2Nbox.Maximum = new decimal(new int[] {
             256,
@@ -12572,7 +12543,6 @@
             0,
             0});
             this.yokaiUnknown2Nbox.Name = "yokaiUnknown2Nbox";
-            this.yokaiUnknown2Nbox.ReadOnly = true;
             this.yokaiUnknown2Nbox.Size = new System.Drawing.Size(103, 23);
             this.yokaiUnknown2Nbox.TabIndex = 1;
             // 
@@ -12596,7 +12566,6 @@
             // 
             // yokaiUnknown16Nbox
             // 
-            this.yokaiUnknown16Nbox.Enabled = false;
             this.yokaiUnknown16Nbox.Location = new System.Drawing.Point(261, 195);
             this.yokaiUnknown16Nbox.Maximum = new decimal(new int[] {
             256,
@@ -12604,13 +12573,11 @@
             0,
             0});
             this.yokaiUnknown16Nbox.Name = "yokaiUnknown16Nbox";
-            this.yokaiUnknown16Nbox.ReadOnly = true;
             this.yokaiUnknown16Nbox.Size = new System.Drawing.Size(103, 23);
             this.yokaiUnknown16Nbox.TabIndex = 1;
             // 
             // yokaiUnknown17Nbox
             // 
-            this.yokaiUnknown17Nbox.Enabled = false;
             this.yokaiUnknown17Nbox.Location = new System.Drawing.Point(261, 224);
             this.yokaiUnknown17Nbox.Maximum = new decimal(new int[] {
             256,
@@ -12618,7 +12585,6 @@
             0,
             0});
             this.yokaiUnknown17Nbox.Name = "yokaiUnknown17Nbox";
-            this.yokaiUnknown17Nbox.ReadOnly = true;
             this.yokaiUnknown17Nbox.Size = new System.Drawing.Size(103, 23);
             this.yokaiUnknown17Nbox.TabIndex = 1;
             // 
@@ -12666,7 +12632,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Another YW4 Save Editor 0.2";
+            this.Text = "Another YW4 Save Editor 0.2.1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();

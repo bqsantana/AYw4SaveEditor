@@ -1193,6 +1193,11 @@ namespace Another_YW_4_Save_Editor
         {
             foreach (ListViewItem item in yokaiListView.SelectedItems)
             {
+                if(saveFileParams.UserYoKaiList[item.Index].YoKai_Signature != 
+                    new SetYokai().pickYokaiBytesFromIdIndex(Convert.ToInt16(yokaiIdNbox.Value)))
+                {
+                    yokaiUnknown12Nbox.Value = 1;
+                }
 
                 saveFileParams.UserYoKaiList[item.Index].YoKai_Signature = new SetYokai().pickYokaiBytesFromIdIndex(Convert.ToInt16(yokaiIdNbox.Value));
 
@@ -1218,6 +1223,23 @@ namespace Another_YW_4_Save_Editor
                 saveFileParams.UserYoKaiList[item.Index].ID1 = Convert.ToInt32(yokaiId1Nbox.Value);
                 saveFileParams.UserYoKaiList[item.Index].ID2 = Convert.ToInt32(yokaiId2Nbox.Value);
                 saveFileParams.UserYoKaiList[item.Index].YoKai_Order = Convert.ToInt32(yokaiOrderNbox.Value);
+                saveFileParams.UserYoKaiList[item.Index].YoKai_Unknown1 =  Convert.ToInt32(yokaiUnknown1Nbox.Value);
+                saveFileParams.UserYoKaiList[item.Index].YoKai_Unknown2 =  Convert.ToInt32(yokaiUnknown2Nbox.Value);
+                saveFileParams.UserYoKaiList[item.Index].YoKai_Unknown3 =  Convert.ToInt32(yokaiUnknown3Nbox.Value);
+                saveFileParams.UserYoKaiList[item.Index].YoKai_Unknown4 =  Convert.ToInt32(yokaiUnknown4Nbox.Value);
+                saveFileParams.UserYoKaiList[item.Index].YoKai_Unknown5 =  Convert.ToInt32(yokaiUnknown5Nbox.Value);
+                saveFileParams.UserYoKaiList[item.Index].YoKai_Unknown6 =  Convert.ToInt32(yokaiUnknown6Nbox.Value);
+                saveFileParams.UserYoKaiList[item.Index].YoKai_Unknown7 =  Convert.ToInt32(yokaiUnknown7Nbox.Value);
+                saveFileParams.UserYoKaiList[item.Index].YoKai_Unknown8 =  Convert.ToInt32(yokaiUnknown8Nbox.Value);
+                saveFileParams.UserYoKaiList[item.Index].YoKai_Unknown9 =  Convert.ToInt32(yokaiUnknown9Nbox.Value);
+                saveFileParams.UserYoKaiList[item.Index].YoKai_Unknown10 = Convert.ToInt32(yokaiUnknown10Nbox.Value); 
+                saveFileParams.UserYoKaiList[item.Index].YoKai_Unknown11 = Convert.ToInt32(yokaiUnknown11Nbox.Value); 
+                saveFileParams.UserYoKaiList[item.Index].YoKai_Unknown12 = Convert.ToInt32(yokaiUnknown12Nbox.Value); 
+                saveFileParams.UserYoKaiList[item.Index].YoKai_Unknown13 = Convert.ToInt32(yokaiUnknown13Nbox.Value); 
+                saveFileParams.UserYoKaiList[item.Index].YoKai_Unknown14 = Convert.ToInt32(yokaiUnknown14Nbox.Value); 
+                saveFileParams.UserYoKaiList[item.Index].YoKai_Unknown15 = Convert.ToInt32(yokaiUnknown15Nbox.Value); 
+                saveFileParams.UserYoKaiList[item.Index].YoKai_Unknown16 = Convert.ToInt32(yokaiUnknown16Nbox.Value);
+                saveFileParams.UserYoKaiList[item.Index].YoKai_Unknown17 = Convert.ToInt32(yokaiUnknown17Nbox.Value);
 
                 if (yokaiUnknown12Nbox.Value == 0)
                     saveFileParams.UserYoKaiList[item.Index].YoKai_Unknown12 = 1;
@@ -1258,6 +1280,8 @@ namespace Another_YW_4_Save_Editor
                         idExist = false;
                     }
                 }
+                item.Selected = false;
+                item.Selected = true;
             }
         }
 
